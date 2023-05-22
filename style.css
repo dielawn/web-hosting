@@ -4,7 +4,10 @@
     padding: 0px;
 }
 .container{
+    display: flex;
+    flex-direction: column;
     width: 100vw;
+    height: 100vh;
     height: fit-content;
     background-color: rgb(204, 204, 206);
 }
@@ -14,13 +17,13 @@
 .topnav {
     background-color: #575656;
     overflow: hidden;
-    
+    position: fixed;
+    width: 100%;
   }
   
   /* Style the links inside the navigation bar */
   .topnav a {
-    float: left;
-    display: block;
+    float: left;   
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
@@ -55,12 +58,13 @@
   .introDiv{
     background-color: rgb(204, 204, 206);
     max-width: 100vw;
+    height: 100vh;
   }
   .introImg{
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 7%;
-    max-height:84vh;
+   height:80vh;
     overflow: hidden;
     top: 143px;
     
@@ -90,11 +94,25 @@
     background-color: #434444;
     color: white;
   }
-.constructionDiv{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 100%;
+
+.hosting{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 250px 0 250px;
+    padding-top: 150px;
+    height: 100vh;
+    background-color: rgb(204, 204, 206);
+    
+}
+.pkgCard{
+    padding: 75px;
+    height: 300px;
+    width: max-content;
+    background-color: #f2f2f2;
+}
+.disclaimerTxt{
+    position: fixed;
+    bottom: 0;
 }
   @media screen and (max-width: 800px) {
     .container{
