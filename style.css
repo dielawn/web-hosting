@@ -164,6 +164,7 @@
         border-radius: 15px;
         font-family: 'Wix Madefor Display', sans-serif;
       }
+
       .hosting{
         flex-direction: column;
         justify-content: space-around;
@@ -178,5 +179,21 @@
         height: 300px;
         width: max-content;
         background-color: #f2f2f2;
+    }
+    .sites{
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 10px 250px 10px 250px;
+        padding-top: 150px;
+        height: 100%;
+    }
+    .demoCrd{
+        padding: 25px;
+        margin: 5px;
+        height: 200px;
+        width: max-content;
+        background-color: #f2f2f2;
+        
     }
   }
