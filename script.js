@@ -1,32 +1,49 @@
 const hostingPackages = [
     {name: 'Basic',
-    price: '2.99/mo*',
+    price: '$250*',
     storage: '10GB SSD Storage',
     siteQty: '1',
     description: 'Custom WP Themes',
     ssl: 'Free SSL',
+    hosting: '1yr web hosting Free',
     },
     {name: 'Plus',
-    price: '4.99/mo*',
+    price: '$350*',
     storage: '40GB SSD Storage',
     siteQty: '1',
     description: 'Custom WP Themes',
     ssl: 'Free SSL',
+    hosting: '1yr web hosting Free',
     },
     {name: 'Premium',
-    price: '9.99/mo*',
+    price: '$400*',
     storage: '100GB SSD Storage',
     siteQty: '1',
     description: 'Custom WP Themes',
     ssl: 'Free SSL',
+    hosting: '1yr web hosting Free',
     },
     {name: 'Custom Site',
-    price: '$500',
+    price: '$500*',
     storage: '100GB SSD Storage',
     siteQty: '1',
-    description: '1yr web hosting Free',
+    description: '',
     ssl: 'Free SSL',
+    hosting: '1yr web hosting Free',
     },
+]
+const exampleSites = [
+    {name: 'Rayless Tan',
+url: 'raylesstan.com',
+img: 'images/rayless-thumb.png',
+},
+{name: 'Chroma Salon',
+url: 'chromasalontacoma.com',
+img: 'images/chroma-thumb.png',
+},
+{name: 'Grocery List App',
+url: 'dielawn.github.io/grocery-list-app',
+img: 'images/grocery-list-thumb.png'}
 ]
 
 const homeNavLink = document.getElementById('homeBtn');
@@ -49,9 +66,10 @@ const createBtn = (parent, text, btnName) => {
   }
     
 window.onload = () => {
-    introDiv.style.display = 'block'; 
-    hostingDiv.style.display = 'none'
+    handleDisplay()
+    introDiv.style.display = 'block';    
     displayPkgs(hostingPackages)
+    displaySites(exampleSites)
 }
 
 
@@ -95,8 +113,41 @@ const handleDisplay = () => {
     aboutDiv.style.display = 'none'
 }
 
-const displayPkgs = (list) => {
-    
+const displaySites = (list) => {  
+    for (let i = 0; i < list.length; i++) {
+        console.log(list.length)
+      let card = document.createElement('div');
+      card.classList.add('demoCrd');
+      siteDiv.appendChild(card);
+  
+      // Name
+      let name = document.createElement('h2');
+      name.classList.add('cardName');
+      name.innerText = list[i].name;
+      card.appendChild(name);
+  
+// URL link
+let link = document.createElement('a');
+link.classList.add('cardLink');
+link.href = list[i].url;
+
+// Image thumbnail
+let image = document.createElement('img');
+image.classList.add('cardImage');
+
+if (list[i].img) {
+  image.src = list[i].img;
+} else {
+  image.src = 'placeholder.jpg'; // Set a placeholder image if the URL is not available
+}
+
+link.appendChild(image);
+card.appendChild(link);
+}
+};
+
+
+const displayPkgs = (list) => {    
     for(let i = 0; i < list.length; i++){
         let card = document.createElement('div')        
         card.classList.add('pkgCard')
