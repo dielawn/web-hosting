@@ -60,6 +60,10 @@
     max-width: 100vw;
     height: 100vh;
   }
+  .about{
+    position: relative;
+    top: 143px;
+  }
   .introImg{
     position: relative;
     top: 50%;
@@ -129,12 +133,15 @@
     
     padding: 25px;
     height: fit-content;
-    width: max-content;
+    width: 500px;
     background-color: #f2f2f2;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+.mobileImg{
+   max-height: 300px;
+}
 .cardImage{
-    width: 200px;
+    width: 450px;
 }
   @media screen and (max-width: 800px) {
     .container{
@@ -191,9 +198,12 @@
     .demoCrd{
         padding: 25px;
         margin: 5px;
-        height: 200px;
-        width: max-content;
+        height: fit-content;
+        width: 400px;
         background-color: #f2f2f2;
-        
+        text-align: center;
+    }
+    .cardImage{
+        width: 325px;
     }
   }

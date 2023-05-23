@@ -33,17 +33,22 @@ const hostingPackages = [
     },
 ]
 const exampleSites = [
-    {name: 'Rayless Tan',
+{name: 'RaylessTan',
 url: 'raylesstan.com',
 img: 'images/rayless-thumb.png',
+mobile: 'images/rayless-mobile-thumb.jpg'
 },
 {name: 'Chroma Salon',
 url: 'chromasalontacoma.com',
 img: 'images/chroma-thumb.png',
+mobile: 'images/chroma-mobile-thumb.jpg'
 },
 {name: 'Grocery List App',
 url: 'dielawn.github.io/grocery-list-app',
-img: 'images/grocery-list-thumb.png'}
+img: 'images/grocery-list-thumb.png',
+mobile: 'images/grocery-mobile-thumb.jpg'
+}
+
 ]
 
 const homeNavLink = document.getElementById('homeBtn');
@@ -134,14 +139,17 @@ link.href = list[i].url;
 // Image thumbnail
 let image = document.createElement('img');
 image.classList.add('cardImage');
-
+let mobile = document.createElement('img');
+mobile.classList.add('mobileImg')
 if (list[i].img) {
   image.src = list[i].img;
+  mobile.src = list[i].mobile;
 } else {
   image.src = 'placeholder.jpg'; // Set a placeholder image if the URL is not available
 }
 
 link.appendChild(image);
+link.appendChild(mobile);
 card.appendChild(link);
 }
 };
@@ -182,6 +190,11 @@ let sslCertificate = document.createElement('p')
 sslCertificate.classList.add('sslCertificate')
 sslCertificate.innerText = list[i].ssl
 card.appendChild(sslCertificate)
+// //hosting
+// let hosting = document.createElement('p')
+// hosting.classList.add('hosting')
+// hosting.innerText = list[i].hosting
+// card.appendChild(hosting)
 
     }
 }
